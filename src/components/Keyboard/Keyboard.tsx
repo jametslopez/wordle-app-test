@@ -1,18 +1,16 @@
 import "./Keyboard.scss";
 import Key from "./Key";
+import { useContext } from "react";
+import { WordleContext } from "../../App";
 import iconKeyDelete from "../../assets/images/icon-key-delete.svg";
-// import iconKeyDeleteDark from "../../assets/images/icon-key-delete-dark.svg";
-import { useEffect, useState } from "react";
+import iconKeyDeleteDark from "../../assets/images/icon-key-delete-dark.svg";
 
 export const Keyboard = () => {
-  const [isModeDark, setIsModeDark] = useState(false);
+  const { isThemeDark } = useContext(WordleContext);
+
   const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
   const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ"];
   const keys3 = ["Z", "X", "C", "V", "B", "N", "M"];
-
-  const KeyDel = () => {
-    return <img src={iconKeyDelete} />;
-  };
 
   const Keys1 = () => {
     return (
@@ -41,7 +39,16 @@ export const Keyboard = () => {
         {keys3.map((char, index) => (
           <Key key={index} letter={char} />
         ))}
-        <Key keyAction={true} letter={<KeyDel />} />
+        <Key
+          keyAction={true}
+          letter={
+            isThemeDark ? (
+              <img src={iconKeyDeleteDark} />
+            ) : (
+              <img src={iconKeyDelete} />
+            )
+          }
+        />
       </div>
     );
   };

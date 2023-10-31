@@ -9,7 +9,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
   const [timer, setTimer] = useState("");
-  const [themeDark, setThemeDark] = useState(false);
+  // const [themeDark, setThemeDark] = useState(false);
   const [showModalInfo, setShowModalInfo] = useState(false);
   const [showModalStsc, setShowModalStsc] = useState(false);
 
@@ -21,15 +21,17 @@ export default function Navbar() {
     setIsVictory,
     isNoVictory,
     setIsNoVictory,
+    isThemeDark,
+    setIsThemeDark,
   } = useContext(WordleContext);
 
   const onModeTheme = (event: any) => {
     if (event.target.checked) {
-      setThemeDark(false);
+      setIsThemeDark(false);
       localStorage.setItem("theme", "light");
       document.documentElement.setAttribute("data-theme", "light");
     } else {
-      setThemeDark(true);
+      setIsThemeDark(true);
       localStorage.setItem("theme", "dark");
       document.documentElement.setAttribute("data-theme", "dark");
     }
@@ -124,7 +126,7 @@ export default function Navbar() {
           <div className="w-1/3">
             <div className="flex items-center justify-start">
               <button type="button" onClick={() => setShowModalInfo(true)}>
-                {themeDark ? (
+                {isThemeDark ? (
                   <img src={iconInfoDark}></img>
                 ) : (
                   <img src={iconInfo}></img>
@@ -136,7 +138,7 @@ export default function Navbar() {
           <div className="w-1/3">
             <div className="flex items-center justify-end gap-4">
               <button type="button" onClick={() => onShowModalStsc()}>
-                {themeDark ? (
+                {isThemeDark ? (
                   <img src={iconStatisticDark}></img>
                 ) : (
                   <img src={iconStatistic}></img>
@@ -153,7 +155,7 @@ export default function Navbar() {
                   />
                   <div
                     className={`switch ${
-                      !themeDark ? "switch-checked" : ""
+                      !isThemeDark ? "switch-checked" : ""
                     } bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-100 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[5px] after:left-[10px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600`}
                   ></div>
                 </label>

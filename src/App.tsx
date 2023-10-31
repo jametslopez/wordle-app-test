@@ -18,6 +18,8 @@ export interface ContextProps {
   setIsVictory?: any;
   isNoVictory?: boolean;
   setIsNoVictory?: any;
+  isThemeDark?: boolean;
+  setIsThemeDark?: any;
 }
 
 export const WordleContext = createContext<ContextProps>({} as ContextProps);
@@ -34,6 +36,8 @@ function App() {
   const [isNoVictory, setIsNoVictory] = useState<boolean | undefined>(
     undefined
   );
+
+  const [isThemeDark, setIsThemeDark] = useState(true);
 
   const randomNumber = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -107,6 +111,8 @@ function App() {
           setIsVictory,
           isNoVictory,
           setIsNoVictory,
+          isThemeDark,
+          setIsThemeDark,
         }}
       >
         <Navbar />
