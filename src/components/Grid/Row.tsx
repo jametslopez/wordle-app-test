@@ -5,7 +5,7 @@ export const Row = (props: any) => {
   return (
     <div className="flex flex-row items-center justify-center gap-2 mb-2">
       {rows.map((item, index) => (
-        <Cube rowId={props.id} key={index} id={index} />
+        <Cube rowId={props.id} key={item} id={index} />
       ))}
     </div>
   );

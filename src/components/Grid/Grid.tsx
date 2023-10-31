@@ -5,7 +5,7 @@ export const Grid = () => {
   return (
     <div className="my-12">
       {rows.map((row, index) => (
-        <Row key={index} id={index} />
+        <Row key={row} id={index} />
       ))}
     </div>
   );
