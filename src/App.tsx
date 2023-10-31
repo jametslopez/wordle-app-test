@@ -37,7 +37,7 @@ function App() {
     undefined
   );
 
-  const [isThemeDark, setIsThemeDark] = useState(true);
+  const [isThemeDark, setIsThemeDark] = useState(false);
 
   const randomNumber = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
