@@ -1,0 +1,93 @@
+.nav-bar {
+  width: 638px;
+  height: 84px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  background: var(--navbar-color);
+  .title {
+    color: var(--color-primary);
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 3px;
+  }
+  .switch {
+    width: 60px;
+    height: 30px;
+    background-size: cover;
+    background-image: url("../assets/images/bg-switch-body-dark.svg");
+    &::after {
+      border: none !important;
+      box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.25);
+      background: linear-gradient(#c8d7ff, #dcf0ff00) !important;
+    }
+    &.switch-checked {
+      background-image: url("../assets/images/bg-switch-body.svg");
+      &::after {
+        box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.25);
+        background: linear-gradient(#ffbf24, #f4924b) !important;
+      }
+    }
+  }
+}
+.modal {
+  .modal-body {
+    max-width: 546px;
+    border: 1px solid #939b9f;
+    background-color: var(--bg-black-color);
+  }
+  .title {
+    color: var(--color-primary);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  .cubes {
+    div {
+      width: 76px;
+      height: 76px;
+      border-radius: 5px;
+      text-align: center;
+      font-family: Roboto;
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #888fb5;
+      &.success {
+        background: #6aaa64;
+      }
+      &.warning {
+        background: #ceb02c;
+      }
+      &.error {
+        background: #939b9f;
+      }
+    }
+  }
+  button {
+    width: 263px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #6aaa64;
+    color: #fff;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+}

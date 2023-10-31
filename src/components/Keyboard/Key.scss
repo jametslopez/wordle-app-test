@@ -1,0 +1,21 @@
+.btn-key {
+  width: 44.665px;
+  height: 51.046px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--key-color) !important ;
+  background-color: var(--key-bg) !important;
+  &.action {
+    font-size: 15px;
+    width: 71.783px;
+    height: 51.046px;
+  }
+}

@@ -1,0 +1,29 @@
+.cube {
+  width: 76px;
+  height: 75px;
+  border-radius: 5px;
+  background: var(--cube-bg);
+  &.success {
+    background-color: #6aaa64;
+  }
+  &.warning {
+    background-color: #ceb02c;
+  }
+  &.error {
+    background-color: #939b9f;
+  }
+  p {
+    width: 26px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+}
